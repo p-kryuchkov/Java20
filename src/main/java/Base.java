@@ -57,6 +57,10 @@ public class Base {
                     }
                     break;
             }
+            in.close();
+            xin.close();
+            yin.close();
+            oin.close();
         } else if (program == 2) {
             Scanner arraysizein = new Scanner(System.in);
             System.out.println("Введите размер массива: ");
@@ -73,9 +77,13 @@ public class Base {
             int max = arraycount[0];
             String maxword = array[0];
             for (int j = 0; j < arraycount.length; j++) {
-                if (arraycount[j] > max) maxword = array[j];
+                if (arraycount[j] > max) {
+                    max = arraycount[j];
+                    maxword = array[j];
+                }
             }
             System.out.println("Самое длинное слово в массиве: " + maxword);
+            arraysizein.close();
         } else {
             System.out.println("Неправильный выбор программы");
         }
